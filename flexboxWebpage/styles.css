@@ -19,6 +19,7 @@ body {
 img{
     max-width:100%;
     max-height:100%;
+    
 }
 ul{
     display: flex;
@@ -40,6 +41,8 @@ a{
     color: #fff4f4;
     font-size: 20px;
 }
+
+
 
 .firstPart{
     background-color: #000504;
@@ -78,4 +81,116 @@ a{
     font-size: 16px;
     border-radius: 12px;
     
+}
+
+
+
+.secondPart{
+    text-align: center;
+    margin-bottom: 20px;
+    
+}
+.title{
+    font-size: 36px;
+  font-weight: 900;
+  margin-bottom: 32px;
+  margin-top: 32px;
+}
+.infoGroup{
+    display: flex;  
+   justify-content: center;
+   align-items: baseline;
+   gap: 52px;
+}
+.group{
+    max-width: 225px;
+}
+.text{
+    margin-top: 10px;
+}
+
+
+
+.thirdPart{
+ display: flex;
+ height: 300px;
+ width: auto;
+ flex-flow: column wrap;
+align-items: center;
+justify-content: center;
+background-color: #8bdd8b;
+margin-bottom: 20px;
+}
+.quote{
+    font-size: 25px;
+    height: auto;
+    width: 500px;
+}
+.author{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: end;
+    width: 500px;
+}
+.quotebox{
+    align-items: center;
+justify-content: center;
+}
+
+.fourthPart{
+    display: flex;
+    height: 300px;
+    width: auto;
+    flex-flow: column wrap;
+    align-items: center;
+justify-content: center;
+    
+}
+.popup{
+    background-color: #4ac468;
+   display: flex;
+width: 750px;
+height: 100px;
+justify-content: center;
+align-items: center;
+border-radius:12px ;
+gap: 15px;
+}
+.leftText{
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    align-items: start;
+    justify-content: center;
+    
+    gap:5px;
+}
+.textitle{
+    font-size: 20px;
+    font-weight: bold;
+}
+.button2{
+    background-color: #4ac468;
+    border: 2px solid white;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 12px;
+}
+
+
+
+.footer{
+    background-color: #000504;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 50px;
+    padding: 20px 200px; 
+}
+.somefooter{
+    color: #fff4f4;
 }
