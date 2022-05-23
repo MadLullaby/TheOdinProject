@@ -4,7 +4,8 @@ Tip: use the console to make sure this is returning the expected output before m
 
 let playerScore = 0;
 let computerScore = 0;
-let result ="";
+
+
 const moves = ["rock", "paper", "scissor"];
 
 function computerPlay(){
@@ -32,23 +33,41 @@ if ((playerSelection == "rock" && computerSelection == "scissor") ||
     (playerSelection == "scissor" && computerSelection == "paper"))
     {
         playerScore += 1;
-        return ("You Win! " + playerSelection + " beats " + computerSelection);
+        return ("You Win! " + playerSelection + " beats " + computerSelection + 
+        ". Total score is " + playerScore + " - " + computerScore);
        
+        if (playerScore === 3){
+            
+            return ("You Win! Reload page to play again")
+        }
 
     }
 
 else if (playerSelection == computerSelection){
-        return "It\'s a tie. You both chose " + playerSelection ;
+        return ("It\'s a tie. You both chose " + playerSelection +
+        ". Total score is " + playerScore + " - " + computerScore);
     }
+else if ((playerSelection == "rock" && computerSelection == "paper") ||
+        (playerSelection == "paper" && computerSelection == "scissor")   ||
+        (playerSelection == "scissor" && computerSelection == "rock"))
+        {
+            computerScore += 1;
+        return ("You Lose! " + computerSelection + " beats " + playerSelection +
+        ". Total score is " + playerScore + " - " + computerScore);
+
+        if (computerScore === 3){
+            
+            return ("You Lose! Reload page to play again");
+        }
+       }
 
 else {
-        computerScore += 1;
-        return ("You Lose! " + computerSelection + " beats " + playerSelection);
+    return ("invalid, try again");
     }   
     
  }
  
- for (let i = 0; i < 5; i++){
+ while (playerScore < 3){
 
  console.log(round());
  }
