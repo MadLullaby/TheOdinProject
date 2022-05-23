@@ -12,9 +12,9 @@ computerPlay();
 
     computerSelection = computerPlay();    //tolowercase = case insensitive
 
-if ((playerSelection.toLowerCase() == "rock" && computerSelection == "scissor") ||
-    (playerSelection.toLowerCase() == "paper" && computerSelection == "rock")   ||
-    (playerSelection.toLowerCase() == "scissor" && computerSelection == "paper"))
+if ((playerSelection == "rock" && computerSelection == "scissor") ||
+    (playerSelection == "paper" && computerSelection == "rock")   ||
+    (playerSelection == "scissor" && computerSelection == "paper"))
     {
         playerScore += 1;
         return ("You Win! " + playerSelection + " beats " + computerSelection + 
@@ -26,9 +26,9 @@ else if (playerSelection == computerSelection){
         return ("It\'s a tie. You both chose " + playerSelection +
         ". Total score is " + playerScore + " - " + computerScore);
     }
-else if ((playerSelection.toLowerCase() == "rock" && computerSelection == "paper") ||
-        (playerSelection.toLowerCase() == "paper" && computerSelection == "scissor")   ||
-        (playerSelection.toLowerCase() == "scissor" && computerSelection == "rock"))
+else if ((playerSelection == "rock" && computerSelection == "paper") ||
+        (playerSelection == "paper" && computerSelection == "scissor")   ||
+        (playerSelection == "scissor" && computerSelection == "rock"))
         {
             computerScore += 1;
         return ("You Lose! " + computerSelection + " beats " + playerSelection +
@@ -51,7 +51,7 @@ let computerScore = 0;
 
  function play (){
 
-  let playerSelection = prompt();
+  let playerSelection = prompt().toLowerCase();
   let computerSelection = computerPlay();
   console.log(round(playerSelection));    //printa l'intera funzione in loop ( if condition ) fino a else/if condition.
     
