@@ -1,5 +1,5 @@
-let userScore = 0;
-let cpuScore = 0;
+let user_score = 0;
+let cpu_score = 0;
 const userScoreDom = document.getElementById("userScore");
 const cpuScoreDom = document.getElementById("cpuScore");
 const resultDom = document.getElementById("phrase");
@@ -44,21 +44,21 @@ function game(userChoice) {
 
 
 function win(userChoice,cpuChoice) {
-    userScore++;
-    userScoreDom.innerHTML = userScore;
-    resultDom.innerHTML = `Your ${userChoice} beats their ${cpuChoice}. You Win!`;
+    user_score++;
+    userScoreDom.innerHTML = user_score;
+    resultDom.innerHTML = `Your ${userChoice} beats CPU ${cpuChoice}. You Win!`;
     endOfGame();
 }
 
 function lose(userChoice,cpuChoice) {
-    cpuScore++;
-    cpuScoreDom.innerHTML = cpuScore;
-    resultDom.innerHTML = `Your ${userChoice} loses to their ${cpuChoice}. You Lose!`;
+    cpu_score++;
+    cpuScoreDom.innerHTML = cpu_score;
+    resultDom.innerHTML = `Your ${userChoice} loses to CPU ${cpuChoice}. You Lose!`;
     endOfGame();
 }
 
 function tie(userChoice, cpuChoice) {
-    resultDom.innerHTML = `Your ${userChoice} and their ${cpuChoice} do nothing. It's a tie!`
+    resultDom.innerHTML = `Your ${userChoice} and CPU ${cpuChoice} do nothing. It's a tie!`
     endOfGame();
 }
 
@@ -73,10 +73,10 @@ function getCpuChoice (){
 
 
 function endOfGame () {
-    if (userScore < 5 && cpuScore < 5){
+    if (user_score < 5 && cpu_score < 5){
         game(userChoice);
     }
-    else if (userScore === 5 && cpuScore < 5){
+    else if (user_score === 5 && cpu_score < 5){
        const container = document.querySelector("#result");
        const para= document.createElement("p");
        para.textContent = "You Win!";
@@ -87,11 +87,16 @@ function endOfGame () {
        const endP = document.createElement("button");
        endP.textContent = "Click me to play again!";
        endP.setAttribute= ("style", "text-align: center;");
+       
+       endP.addEventListener("click", function stop(){
+        window.location.reload();
+       })
+       
        div.appendChild(endP);
 
-       
+
     }
-    else if (userScore < 5 && cpuScore === 5) {
+    else  {
        const container = document.querySelector("#result");
        const para= document.createElement("p");
        para.textContent = "You Lose!";
@@ -102,7 +107,12 @@ function endOfGame () {
        const endP = document.createElement("button");
        endP.textContent = "Click me to play again!";
        endP.setAttribute= ("style", "text-align: center;");
+       
+       endP.addEventListener("click", function stop(){
+        window.location.reload();
+       })
+       
        div.appendChild(endP);
-      
+
     }
 }
