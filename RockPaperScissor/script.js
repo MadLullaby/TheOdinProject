@@ -46,17 +46,12 @@ else {
 
  let playerScore = 0;
  let computerScore = 0;
- const r = document.getElementsByClassName("r");
- const p = document.getElementsByClassName("p");
- const s = document.getElementsByClassName("s");
-
-r.addEventListener("click", round("rock"));
-  
+ 
 
 
  function play (){
 
- // let playerSelection = prompt().toLowerCase();
+  let playerSelection = prompt().toLowerCase();
   let computerSelection = computerPlay();
   console.log(round(playerSelection));    //printa l'intera funzione in loop ( if condition ) fino a else/if condition.
     
