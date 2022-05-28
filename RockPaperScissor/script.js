@@ -1,7 +1,7 @@
 
 function computerPlay(){
     
-    const moves = ["rock", "paper", "scissor"];
+    const moves = ["rock", "paper", "scissors"];
     let move = moves[Math.floor(Math.random()*moves.length)];   //mossa random per ai
     return move;
 }
@@ -12,9 +12,9 @@ computerPlay();
 
     computerSelection = computerPlay();    //tolowercase = case insensitive
 
-if ((playerSelection == "rock" && computerSelection == "scissor") ||
+if ((playerSelection == "rock" && computerSelection == "scissors") ||
     (playerSelection == "paper" && computerSelection == "rock")   ||
-    (playerSelection == "scissor" && computerSelection == "paper"))
+    (playerSelection == "scissors" && computerSelection == "paper"))
     {
         playerScore += 1;
         return ("You Win! " + playerSelection + " beats " + computerSelection + 
@@ -27,8 +27,8 @@ else if (playerSelection == computerSelection){
         ". Total score is " + playerScore + " - " + computerScore);
     }
 else if ((playerSelection == "rock" && computerSelection == "paper") ||
-        (playerSelection == "paper" && computerSelection == "scissor")   ||
-        (playerSelection == "scissor" && computerSelection == "rock"))
+        (playerSelection == "paper" && computerSelection == "scissors")   ||
+        (playerSelection == "scissors" && computerSelection == "rock"))
         {
             computerScore += 1;
         return ("You Lose! " + computerSelection + " beats " + playerSelection +
