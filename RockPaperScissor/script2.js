@@ -1,20 +1,21 @@
-let user_score = 0;
-let cpu_score = 0;
+let user_score= 0 ;
+let cpu_score= 0 ;
 const userScoreDom = document.getElementById("userScore");
 const cpuScoreDom = document.getElementById("cpuScore");
 const resultDom = document.getElementById("phrase");
 const rockButton = document.getElementById("r");
 const paperButton = document.getElementById("p");
 const scissorsButton = document.getElementById("s");
+const button = document.querySelectorAll(".button");
 
 rockButton.addEventListener("click", function (){
-    game("rock");
+    endOfGame("rock");
 });
 paperButton.addEventListener("click", function(){
-    game("paper");
+    endOfGame("paper");
 });
 scissorsButton.addEventListener("click", function(){
-    game("scissors");
+    endOfGame("scissors");
 });
 
 
@@ -72,7 +73,7 @@ function getCpuChoice (){
 }
 
 
-function endOfGame () {
+function endOfGame (userChoice) {
     if (user_score < 5 && cpu_score < 5){
         game(userChoice);
     }
@@ -87,12 +88,19 @@ function endOfGame () {
        const endP = document.createElement("button");
        endP.textContent = "Click me to play again!";
        endP.setAttribute= ("style", "text-align: center;");
-       
+       //reload page
        endP.addEventListener("click", function stop(){
         window.location.reload();
        })
        
        div.appendChild(endP);
+
+       //disable button choices
+      button.forEach((e) => {
+          e.disabled=true;
+      })
+
+    
 
 
     }
@@ -113,6 +121,10 @@ function endOfGame () {
        })
        
        div.appendChild(endP);
+
+       button.forEach((e) => {
+        e.disabled=true;
+    })
 
     }
 }
