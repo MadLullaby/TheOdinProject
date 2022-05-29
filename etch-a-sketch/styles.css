@@ -1,0 +1,43 @@
+body{
+    height: 100vh;
+    margin: 1%;
+    padding: 0;
+}
+
+header{
+    background-color: #0355E9;
+    border-radius: 4px;
+    padding: 1.5%;
+    color: white;
+    font-size: 20px;
+}
+
+.subHeader{
+    background-color: #e5e2cf;
+    padding: 0.3%;
+}
+.buttons{
+    margin: 0 10px;
+    padding: 0 2%;
+    background-color: #e5e2cf00;
+    border-color: #e5e2cf;
+}
+
+.center{
+   display: flex;
+   
+   
+}
+.settings{
+    background-color: #e5e2cf;
+    
+    
+}
+.button{
+    display: flex;
+    flex-direction: column;
+    width: 10vw;
+    height: 8vh;
+    text-align: center;
+    margin: 20px 0;
+}
