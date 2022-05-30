@@ -14,7 +14,9 @@ const rainbow = document.getElementById("rainbow");
 const eraser = document.getElementById("eraser");
 const clear = document.getElementById("clear");
 const grid = document.getElementById("grid");
-
+const small = document.getElementById("small");
+const medium = document.getElementById("medium");
+const large = document.getElementById("large");
 
 
  //- current color
@@ -48,7 +50,10 @@ function newGrid() {
     grid.innerHTML= "";
 }
  
-
+//grid size
+small.onclick = () => setGridSize(16);
+medium.onclick = () => setGridSize(32);
+large.onclick = () => setGridSize(64);
 
 function setGridSize(size){
     grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`
@@ -104,9 +109,11 @@ function changeColor(e) {
 
 
 
+// COLORS!!!
 
+const color = document.getElementById("color");
 
+color.onclick = (e) => 
+setCurrentColor(e.target.value);
 
-
-
-
+document.color.style.backgroundColor = color.target.value;
