@@ -1,6 +1,6 @@
 body{
     height: 100vh;
-    margin: 1%;
+    margin: 0;
     padding: 0;
 }
 
@@ -24,20 +24,69 @@ header{
 }
 
 .center{
-   display: flex;
+    display: flex;
    
    
 }
 .settings{
     background-color: #e5e2cf;
-    
+    padding: 8rem 4rem;
     
 }
 .button{
     display: flex;
     flex-direction: column;
-    width: 10vw;
-    height: 8vh;
-    text-align: center;
+    width: 10rem;
+    height: 4rem;
     margin: 20px 0;
+}
+.button, .text{
+    align-items: center;
+    justify-content: center;
+    
+}
+.grid{
+    display: grid;
+    grid-template: auto;
+  background-color: #85a2d6;
+  padding: 1rem;
+  width: 100vw;
+  border: 2px solid #5a5a5a;
+  
+}
+.colorSection{
+    display: flex;
+    background-color: #e5e2cf;
+    padding: 2.5rem 3rem;
+    border-bottom: 1px solid gray ;
+    border-radius: 4px;
+    
+}
+.colorTab{
+    display: flex;
+    gap: 1rem;
+    border-bottom: 1px solid white ;
+    
+}
+.leftTab{
+    padding: 1rem;
+    border-top: 1px solid #202020;
+    border-left: 1px solid #202020;
+}
+.rightTab{
+    display: flex;
+    flex-flow: wrap;
+    
+}
+.colorGridTab{
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+footer{
+    border-radius: 4px;
+    background-color: #e5e2cf;
+    padding: 1rem 2rem;
+    
 }
