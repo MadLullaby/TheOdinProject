@@ -1,6 +1,8 @@
 body{
-    height: 100vh;
-    margin: 0;
+    
+    height: 100%;
+    
+    margin: 3% 5%;
     padding: 0;
 }
 
@@ -27,6 +29,7 @@ header{
     display: flex;
    
    
+   
 }
 .settings{
     background-color: #e5e2cf;
@@ -45,13 +48,15 @@ header{
     justify-content: center;
     
 }
-.grid{
+
+#grid{
     display: grid;
-    grid-template: auto;
+   
   background-color: #85a2d6;
-  padding: 1rem;
-  width: 100vw;
-  border: 2px solid #5a5a5a;
+  
+  width: 100%;
+  border: 2px solid #5a5a5a; 
+  
   
 }
 .colorSection{
