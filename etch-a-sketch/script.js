@@ -58,7 +58,7 @@ large.onclick = () => setGridSize(64);
 function setGridSize(size){
     grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`
   grid.style.gridTemplateRows = `repeat(${size}, 1fr)`
-
+  newGrid();
     for (let i = 0; i<size*size; i++){
         const gridPixel = document.createElement('div');
         gridPixel.classList.add('gridPixel');
@@ -111,9 +111,11 @@ function changeColor(e) {
 
 // COLORS!!!
 
-const color = document.getElementById("color");
+const color = document.querySelectorAll(".color");
+
+color.forEach(setColor);
+function setColor (e){
 
 color.onclick = (e) => 
 setCurrentColor(e.target.value);
-
-document.color.style.backgroundColor = color.target.value;
+}
