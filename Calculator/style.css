@@ -1,0 +1,31 @@
+html{
+    text-align: center;
+    
+}
+.calc{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(100px, auto) repeat(5, 80px);
+    gap: 10px;
+    border-radius: 4px;
+    border: 20px solid #4baeff;
+    background-color: #4baeff;
+}
+.display{
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+}
+button{
+  
+}
