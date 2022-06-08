@@ -25,6 +25,7 @@ html{
     justify-content: center;
     align-items: flex-end;
     flex-direction: column;
+    font-size: 4rem;
 }
 button{
   
