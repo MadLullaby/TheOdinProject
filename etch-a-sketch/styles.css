@@ -129,8 +129,51 @@ footer{
 /*colors*/
 
 #black{
-    background-color: black;
+    background-color: #000000;
 }
 #white{
-    background-color: white;
+    background-color: #ffffff;
+}
+#darkGray{
+    background-color:#808080;
+}
+#gray{
+    background-color: #c0c0c0;
+
+}
+#darkRed{
+    background-color: #800000;
+}
+#red{
+    background-color:#ff0000;
+}
+#mud{
+    background-color: #808000;
+}
+#green{
+    background-color: #00ff00;
+}
+#darkGreen{
+    background-color: #008000;
+}
+#yellow{
+    background-color: #ffff00;
+}
+#petrol{
+    background-color: #008080;
+}
+#lightBlue{
+    background-color: #00ffff;
+}
+#darkBlue{
+    background-color: #000080;
+}
+#blue{
+    background-color: #0000ff;
+}
+#purple{
+    background-color: #800080;
+}
+#pink{
+    background-color: #ff00ff;
 }
