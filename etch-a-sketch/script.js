@@ -113,9 +113,8 @@ function changeColor(e) {
 
 const color = document.querySelectorAll(".color");
 
-color.forEach(setColor);
-function setColor (e){
-
-color.onclick = (e) => 
-setCurrentColor(e.target.value);
+for(let i = 0; i < color.length; i++) {
+  color[i].addEventListener('click', function(e) {
+setCurrentColor(color[i].value);
+  })
 }

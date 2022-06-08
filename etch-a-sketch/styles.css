@@ -83,12 +83,15 @@ header{
     border-left: 1px solid #202020;
 }
 .rightTab{
-    display: flex;
+    display: grid;
     gap: 20px;
+    grid-template-columns: repeat(8, 20px);
+    grid-template-rows: repeat(2. 20px);
     
     
     
 }
+/*
 .colorGridTab{
     display: flex;
     
@@ -103,7 +106,8 @@ header{
     align-items: center;
     gap: 20px;
 }
-#color{
+*/
+.color{
     height: 20px;
     width: 20px;
     margin-top: 5px;
@@ -124,9 +128,9 @@ footer{
 
 /*colors*/
 
-.black{
+#black{
     background-color: black;
 }
-.white{
+#white{
     background-color: white;
 }
