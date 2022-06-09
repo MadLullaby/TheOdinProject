@@ -27,8 +27,18 @@ function clickButton()
         {
             if (button[i].classList.contains("number"))
             {
-            inputNum(button[i].value)
-            getDisplay();
+                inputNum(button[i].value);
+                getDisplay();
+            }
+            if (button[i].classList.contains("operator"))
+            {
+                inputOperator(button[i].value);
+                getDisplay();
+            }
+            if (button[i].classList.contains("equal"))
+            {
+                inputEqual(button[i].value);
+                getDisplay();
             }
         })
     }
@@ -43,18 +53,103 @@ function inputNum(number)
         {
             displayValue = number;
         }
+        else if ( firstNum === displayValue)
+        {
+            displayValue = number;
+        }
+        else
+        {
+            displayValue += number;
+        }
+    }
+    else
+    {
+        if ( firstNum === displayValue)
+        {
+            displayValue = number;
+        }
         else
         {
             displayValue += number;
         }
     }
 
-
 }
 
 
+function inputOperator(operator)
+{
+    if (firstOperator === null && secondOperator === null)
+    {
+        firstOperator = operator;
+        firstNum = displayValue;
+    }
+    else if (firstOperator != null && secondOperator === null)
+    {
+        secondOperator = operator;
+        secondNum = displayValue;
+        result = operate(Number(firstNum), Number(secondNum), firstOperator)
+        displayValue = result.toString();
+        firstNum = displayValue;
+        result = null;
+    }
+    else if (firstOperator != null  && secondOperator != null)
+    {
+        secondNum = displayValue;
+        result = operate(Number(firstNum), Number(secondNum), secondOperator);
+        secondOperator = operator;
+        displayValue = result.toString();
+        firstNum = displayValue;
+        result = null;
+    }
+}
 
-function operate (x, operator, y){
+
+function inputEqual(equal)
+{
+    if (firstOperator === null)
+    {
+        displayValue = displayValue;
+    }
+    else if (secondOperator != null)
+    {
+        secondNum = displayValue;
+        result = operate(Number(firstNum), Number(secondNum), secondOperator);
+        if (result === "ERROR")
+        {
+            displayValue = "ERROR";
+        }
+        else
+        {
+            displayValue = result.toString();
+            firstNum = displayValue;
+            secondOperator = null;
+            secondNum = null;
+            result = null;
+        }
+    }
+    else   //first != null && second === null
+    {
+        secondNum = displayValue;
+        result = operate(Number(firstNum), Number(secondNum), firstOperator)
+        if (result = "ERROR")
+        {
+            displayValue = "ERROR";
+        }
+        else
+        {
+            displayValue = result.toString();
+            firstNum = displayValue;
+            secondNum = null;
+            firstOperator = null;
+            secondOperator = null;
+            result = null;
+        }
+    }
+   
+}
+
+function operate (x, y, operator){
     switch (operator)
     {
         case "+":
@@ -68,7 +163,7 @@ function operate (x, operator, y){
             break;
         case "/":
             if (y == 0){
-                return "lol";
+                return "ERROR";
             }
             return x/y;
             break;
