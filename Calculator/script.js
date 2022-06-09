@@ -37,7 +37,32 @@ function clickButton()
             }
             if (button[i].classList.contains("equal"))
             {
-                inputEqual(button[i].value);
+                inputEqual();
+                getDisplay();
+            }
+            if (button[i].classList.contains("clear"))
+            {
+                inputClear();
+                getDisplay();
+            }
+            if (button[i].classList.contains("delete"))
+            {
+                inputDelete();
+                getDisplay();
+            }
+            if (button[i].classList.contains("percent"))
+            {
+                inputPercent(displayValue);
+                getDisplay();
+            }
+            if (button[i].classList.contains("sign"))
+            {
+                inputSign(displayValue);
+                getDisplay();
+            }
+            if (button[i].classList.contains("dot"))
+            {
+                inputDot(button[i].value);
                 getDisplay();
             }
         })
@@ -89,7 +114,7 @@ function inputOperator(operator)
         secondOperator = operator;
         secondNum = displayValue;
         result = operate(Number(firstNum), Number(secondNum), firstOperator)
-        displayValue = result.toString();
+        displayValue = roundAccurately(result, 15).toString();
         firstNum = displayValue;
         result = null;
     }
@@ -98,14 +123,14 @@ function inputOperator(operator)
         secondNum = displayValue;
         result = operate(Number(firstNum), Number(secondNum), secondOperator);
         secondOperator = operator;
-        displayValue = result.toString();
+        displayValue = roundAccurately(result, 15).toString();
         firstNum = displayValue;
         result = null;
     }
 }
 
 
-function inputEqual(equal)
+function inputEqual()
 {
     if (firstOperator === null)
     {
@@ -121,24 +146,24 @@ function inputEqual(equal)
         }
         else
         {
-            displayValue = result.toString();
+            displayValue = roundAccurately(result, 15).toString();
             firstNum = displayValue;
             secondOperator = null;
             secondNum = null;
             result = null;
         }
     }
-    else   //first != null && second === null
+    else //(firstOperator != null && secondOperator === null)
     {
         secondNum = displayValue;
         result = operate(Number(firstNum), Number(secondNum), firstOperator)
-        if (result = "ERROR")
+        if (result === "ERROR")
         {
             displayValue = "ERROR";
         }
         else
         {
-            displayValue = result.toString();
+            displayValue = roundAccurately(result, 15).toString();
             firstNum = displayValue;
             secondNum = null;
             firstOperator = null;
@@ -149,24 +174,74 @@ function inputEqual(equal)
    
 }
 
+
+
+
+function inputClear()
+{
+    displayValue = 0;
+    firstNum = null;
+    secondNum= null;
+    firstOperator= null;
+    secondOperator= null;
+    result= null;
+}
+
+function inputDelete()
+{
+    displayValue = displayValue.toString().slice(0, -1);
+}
+
+function inputPercent(num)
+{
+    displayValue = (num/100).toString();
+}
+
+function inputSign(num)
+{
+   displayValue = -num.toString();
+}
+
+function inputDot(dot)
+{
+    if(displayValue === firstNum || displayValue === secondNum) 
+    {
+        displayValue = '0';
+        displayValue += dot;
+    } 
+    else if (!displayValue.includes(dot))
+    {
+        displayValue += dot;
+    } 
+}
+
+
+
+
+
+
 function operate (x, y, operator){
     switch (operator)
     {
         case "+":
             return x+y;
-            break;
+            
         case "-":
             return x-y;
-            break;
+            
         case "*":
             return x*y;
-            break;
+            
         case "/":
             if (y == 0){
                 return "ERROR";
-            }
+            };
             return x/y;
-            break;
+            
     }
        
+}
+
+function roundAccurately(num, places) {
+    return parseFloat(Math.round(num + 'e' + places) + 'e-' + places);
 }
