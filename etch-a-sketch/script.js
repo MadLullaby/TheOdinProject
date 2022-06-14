@@ -51,14 +51,15 @@ function newGrid() {
 }
  
 //grid size
-small.onclick = () => setGridSize(16);
-medium.onclick = () => setGridSize(32);
-large.onclick = () => setGridSize(64);
+small.onclick = () => { currentSize = 16; setGridSize(currentSize)};
+medium.onclick = () => { currentSize = 32; setGridSize(currentSize)};
+large.onclick = () => { currentSize = 64; setGridSize(currentSize)};
 
 function setGridSize(size){
     grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`
   grid.style.gridTemplateRows = `repeat(${size}, 1fr)`
   newGrid();
+  
     for (let i = 0; i<size*size; i++){
         const gridPixel = document.createElement('div');
         gridPixel.classList.add('gridPixel');
@@ -114,7 +115,8 @@ function changeColor(e) {
 const color = document.querySelectorAll(".color");
 
 for(let i = 0; i < color.length; i++) {
-  color[i].addEventListener('click', function(e) {
-setCurrentColor(color[i].value);
-  })
+  color[i].style.backgroundColor = color[i].value;
+  color[i].addEventListener('click',() =>
+setCurrentColor(color[i].value)
+  )
 }
