@@ -6,6 +6,7 @@ body{
     padding: 0;
 }
 
+
 header{
     background-color: #0355E9;
     border-radius: 4px;
@@ -27,7 +28,7 @@ header{
 
 .center{
     display: flex;
-   
+  
    
    
 }
@@ -51,13 +52,19 @@ header{
 
 #grid{
     display: grid;
-   
+    
+    width: 100%;
+    
   
-  
-  width: 100%;
   border: 2px solid #5a5a5a; 
   
   
+}
+.gridPixel{
+
+    aspect-ratio: 1;
+    
+   
 }
 
 
@@ -123,10 +130,10 @@ footer{
     
 }
 
+/*
 
 
-
-/*colors*/
+colors
 
 #black{
     background-color: #000000;
@@ -177,3 +184,4 @@ footer{
 #pink{
     background-color: #ff00ff;
 }
+*/
