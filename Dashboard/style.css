@@ -1,0 +1,54 @@
+.container{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    
+
+}
+.leftPart{
+    background-color: #1992D4;
+    display: grid;
+    grid-template-rows: 100px 300px 200px;
+    grid-row: 1 / 6;
+    gap: 30px;
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    color: #ffffff;
+    
+}
+.navbar{
+    background-color: #ebebeb;
+    display: grid;
+    
+}
+.profileBar{
+    background-color: #b2c0e0;
+    display: flex;
+    
+}
+.homePage{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    background-color: #bfcdf0;
+}
+.myProject{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+   
+    gap: 20px;
+}
+.myProject>h3{
+    padding: 10px;
+    
+}
+.card{
+    background-color: #ffffff;
+    border-color: solid 2px white;
+    border-radius: 5px;
+    border-left: #d4a819;
+}
+footer{
+    background-color: #002e47;
+    color: white;
+}
