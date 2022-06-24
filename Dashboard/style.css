@@ -11,6 +11,7 @@
     grid-row: 1 / 6;
     gap: 30px;
     text-align: center;
+    
 }
 a{
     text-decoration: none;
@@ -20,6 +21,7 @@ a{
 .navbar{
     background-color: #ebebeb;
     display: grid;
+    
     
 }
 .profileBar{
@@ -33,11 +35,12 @@ a{
     background-color: #bfcdf0;
     gap: 15px;
     padding: 10px;
+    
 }
 .myProject{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.1fr 1fr ;
+    grid-template-rows: 0.1fr 1fr;
     gap: 10px;
     padding: 20px;
 }
@@ -49,20 +52,21 @@ a{
 .cardContainer{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     gap: 20px;
     
 }
 .card{
     background-color: #ffffff;
     border-radius: 4px;
-    padding: 5px;
+    padding: 10px;
     border-left:solid 0.5rem #0a88cc;
-   
+    display: grid;
+    grid-template-rows: 0.2fr 1fr 0.1fr;
     
 }
-footer{
-    background-color: #002e47;
-    color: white;
+.card .aContent{
+    justify-self: end;
 }
 .card a{
     color: black;
@@ -94,4 +98,27 @@ footer{
 .ann p{
     margin: 2px 0;
     font-weight: bold;
+}
+.trendingBox{
+    background-color: #ffffff;
+    display: grid;
+    gap: 20px;
+    grid-template-rows: repeat(4, 1fr);
+    padding: 2rem;
+    border-radius: 3px;
+    box-shadow:  5px 2px #002e47;
+}
+.trend{
+    display: grid;
+    grid-template-columns: 0.1fr 1fr;
+    gap: 1.5rem;
+}
+.trend a{
+    color: black;
+    align-self: center;
+}
+
+footer{
+    background-color: #002e47;
+    color: white;
 }
