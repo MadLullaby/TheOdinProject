@@ -24,6 +24,7 @@ body{
     padding: 1rem;
     
 }
+
 .homepage{
     background-color: #725631;
     overflow: auto;
@@ -112,4 +113,5 @@ input{
     margin-bottom: 10px;
     background-color: #a06415;
     border: none;
+    padding:1rem 2rem
 }
