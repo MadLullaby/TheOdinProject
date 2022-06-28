@@ -1,10 +1,10 @@
 class Book 
 {
     constructor(
-        author = "",
+       author = "",
         title = "",
         pages = 0,
-        read = false
+        read = false 
     )
      {
         this.author = author
@@ -26,6 +26,7 @@ class Library{
     removeBook(oldBook)
     {
         this.books = this.books.filter(book => book.oldBook !== oldBook)
+        
     }
     
 }
@@ -54,11 +55,13 @@ function addBook()
 }
 function removeBook(e)
 {
-    const oldBook = e.target.parentNode.parentNode.firstChild.innerHTML.replaceAll(
+    const oldBook = e.target.parentNode.parentNode.parentNode.firstChild.innerHTML.replaceAll(
         '"',
         ''
-      )
+      ) 
+    
     library.removeBook(oldBook)
+    updateBooksGrid()
 }
 
 const addBtn = document.querySelector(".addButton");
@@ -70,11 +73,13 @@ const inputDiv = document.querySelector(".inputDiv")
 
 
 addBtn.addEventListener("click", ()=> {
-    // addBook() da togliere - mettere in line 50
+   
     showInput()
     
-    
 })
+
+
+
 
 // FUNZIONA 
 function createBookCard(book)
@@ -82,6 +87,7 @@ function createBookCard(book)
     const newDiv = document.createElement("div")
     newDiv.className= "book"
     const pGroup = document.createElement("div")
+    pGroup.className= "pGroup"
     const author = document.createElement("p")
     const title = document.createElement("p")
     const pages = document.createElement("p")
@@ -89,8 +95,10 @@ function createBookCard(book)
     pGroup.appendChild(title)
     pGroup.appendChild(pages)
     const btnGroup = document.createElement("div")
+    btnGroup.className = "btnGroup"
     const readBtn = document.createElement("button")
     const removeBtn = document.createElement("button")
+    removeBtn.className = "removeBtn"
     btnGroup.appendChild(readBtn)
     btnGroup.appendChild(removeBtn)
     newDiv.appendChild(pGroup)
@@ -111,7 +119,6 @@ function createBookCard(book)
         readBtn.className = "redBtn"
     }
     
-    
 }
 
 
@@ -126,7 +133,9 @@ const submitBtn = document.getElementById("confirm")
 
 submitBtn.addEventListener("click", () => {
     addBook()
+
     inputDiv.style.display = "none"
+    console.log(library)
 })
 
 function getBookFromInput ()
@@ -139,4 +148,3 @@ const read = document.getElementById("read").value
 return new Book(author, title, pages, read)
 //mettere book in my library
 }
-

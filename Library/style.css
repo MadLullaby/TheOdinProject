@@ -40,8 +40,11 @@ body{
     padding: 1rem;
 }
 .bookContainer .book{
-    background-color: rgba(240, 248, 255, 0.589);
+    background-color: #ffffff;
     padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(90%, 1fr));
+    grid-template-rows: repeat(2, 1fr);
 }
 a{
     text-decoration: none;
@@ -114,4 +117,11 @@ input{
     background-color: #a06415;
     border: none;
     padding:1rem 2rem
+}
+.btnGroup{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    justify-content: center;
+    align-items: center;
 }
