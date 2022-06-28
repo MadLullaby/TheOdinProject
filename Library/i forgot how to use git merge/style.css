@@ -41,10 +41,10 @@ body{
 }
 .bookContainer .book{
     background-color: #ffffff;
-    padding: 2rem;
+    padding: 0.5rem 2rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(90%, 1fr));
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
 }
 a{
     text-decoration: none;
@@ -124,4 +124,9 @@ input{
     gap: 3px;
     justify-content: center;
     align-items: center;
+}
+
+.book p{
+    font-size: 1.1rem;
+    text-align: center;
 }
