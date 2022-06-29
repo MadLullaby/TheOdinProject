@@ -41,13 +41,24 @@ function Book(author, title, pages, read)
         const author = document.getElementById("author").value
         const title = document.getElementById("title").value
         const pages = document.getElementById("pages").value
-        let read = document.getElementById("read").value
+        let read = toggleReadValue()
         
-        read = toggleRead()
-        console.log(read)
+      
         return new Book(author, title, pages, read)
         
     }
+    function toggleReadValue()
+    {
+      let check = document.getElementById("read")
+   
+          if (check.checked) {check.value = "on"}
+          else {check.value = "off"}
+    
+         return check.value
+      }
+
+
+    
 
     //how to display book in homepage
     const bookGrid = document.querySelector(".bookContainer")
@@ -81,7 +92,7 @@ function Book(author, title, pages, read)
         removeBtn.textContent = "Remove"
 
         
-
+      
         if (book.read === "on")
         {
             readBtn.textContent = "Read"
@@ -91,15 +102,25 @@ function Book(author, title, pages, read)
             readBtn.textContent = "Not Read"
             readBtn.className = "redBtn"
         }
+      
         //BTNGROUP FUNCTION
+        //removebtn
         removeBtn.addEventListener("click", () => {
            bookGrid.removeChild(newDiv)
             console.log(newDiv)
             myLibrary.splice(newDiv, 1)
             
-            
         })
+        //toggle readbtn
+        readBtn.addEventListener("click", () =>{
+            if (readBtn.className === "redBtn") {book.read = "on"}
+            else {book.read= "off"}
+            updateBooksGrid()
+          
+        }) 
     }
+
+
 
     const updateBooksGrid = () => {
         resetBooksGrid()
@@ -112,13 +133,4 @@ function Book(author, title, pages, read)
         bookGrid.innerHTML = ''
       }
 
-      function toggleRead()
-      {
-        let check = document.getElementById("read")
-      // check.addEventListener("change", () => {
-            if (check.checked) {check.value = "on"}
-            else {check.value = "off"}
-      //})
-           return check.value
-        }
-      
+  

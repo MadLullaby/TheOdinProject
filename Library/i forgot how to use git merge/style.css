@@ -40,11 +40,15 @@ body{
     padding: 1rem;
 }
 .bookContainer .book{
-    background-color: #ffffff;
-    padding: 0.5rem 2rem;
+    background-color: #fffeca;
+    padding: 0.5rem 2.5rem;
+    
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(90%, 1fr));
-    grid-template-rows: repeat(1, 1fr); 
+    grid-template-rows: repeat(1, 1fr);
+    border-radius: 4px;
+    
+    box-shadow: -10px 10px rgb(61, 50, 1);
 }
 a{
     text-decoration: none;
@@ -63,6 +67,7 @@ a{
 .addButton p{
     color: white;
     font-size: 2em;
+    
     
 }
 .addButton:hover, #confirm:hover{
@@ -132,7 +137,9 @@ input{
     font-size: 1.1rem;
     text-align: center;
     background-color: #a0641580;
+    
 }
+
 .btnGroup button{
     padding: 0.4rem 2rem;
     border-radius: 10px;
