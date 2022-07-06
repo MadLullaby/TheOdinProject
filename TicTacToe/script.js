@@ -1,0 +1,2 @@
+let gameArr = ["","","","","","","","",""];
+const winningArr = []
