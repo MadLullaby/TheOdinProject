@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #b9e4b9;
+    text-align: center;
+   
+    
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding-top: 30px;
+}
+a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+    padding: 1.3rem;
+    
+}
+a:hover{
+    background-color: #00460057;
+    transition: all 0.15s ease-in-out;
+}
+.links{
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+}
