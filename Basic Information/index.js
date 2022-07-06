@@ -1,24 +1,47 @@
-/*
-var http = require('http');
-
-http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/html'});
-  res.end('Hello World!');
-}).listen(8080);
-
-
-*/
-
 var http = require("http");
 var fs = require("fs");
 
-fs.readFile("./index.html", (err, html) =>{
+http.createServer((req, res) => {
 
-    if (err) throw err;
+  if (req.url==="/")
+  {
+    fs.readFile("index.html", (err,data) => {
+      if (err) throw err;
+      res.writeHead(200, {"Content-Type": "text/html"});
+      res.write(data);
+      return res.end;
+    });
+  }
 
-    http.createServer((req,res)=> {
-        res.writeHead(200, {"Content-Type": "text/html"});
-        res.write(html);
-        res.end();
-    }).listen(8080);
-});
+  else if (req.url==="/about")
+  {
+    fs.readFile("about.html", (err,data)=> {
+      if (err) throw err;
+      res.writeHead(200, {"Content-Type": "text-html"});
+      res.write(data);
+      return res.end
+    });
+  }
+
+  else if (req.url==="/contact-me")
+  {
+    fs.readFile("contact-me.html", (err,data)=> {
+      if (err) throw err;
+      res.writeHead(200, {"Content-Type": "text/html"});
+      res.write(data);
+      return res.end
+    });
+  }
+
+  else
+  {
+    fs.readFile("404.html", (err,data)=>{
+      if (err) throw err;
+      res.writeHead(200, {"Content-Type": "text/html"});
+      res.write(data);
+      return res.end
+    })
+  }
+}).listen(8080, ()=>{
+  console.log("Listening on port 8080...")
+})
