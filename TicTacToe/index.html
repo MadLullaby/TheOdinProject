@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>tictactoe</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
@@ -13,17 +13,19 @@
         <h1 class="title">TicTacToe</h1>
         <div class="gridContainer">
             <div class="grid">
-                <button class="gridEl"></button>
-                <button class="gridEl"></button>
-                <button class="gridEl"></button>
-                <button class="gridEl"></button>
-                <button class="gridEl"></button>
-                <button class="gridEl"></button>
-                <button class="gridEl"></button>
-                <button class="gridEl"></button>
-                <button class="gridEl"></button>
+                
+                <div class="gridEl" data-index="0"></div>
+                <div class="gridEl" data-index="1"></div>
+                <div class="gridEl" data-index="2"></div>
+                <div class="gridEl" data-index="3"></div>
+                <div class="gridEl" data-index="4"></div>
+                <div class="gridEl" data-index="5"></div>
+                <div class="gridEl" data-index="6"></div>
+                <div class="gridEl" data-index="7"></div>
+                <div class="gridEl" data-index="8"></div>
             </div>
         </div>
+        <button type="reset" class="reset">Reset</button>
         <p>Turn: O</p>
     </div>
 </body>

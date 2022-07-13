@@ -34,10 +34,13 @@ body {
 }
 .gridEl:hover{
     cursor: pointer;
-}
-.gridEl:active{
     background-color: #9e9ed8;
 }
+
 .container p{
     font-size: 2.5rem;
+}
+.reset{
+    width: 20%;
+    
 }
